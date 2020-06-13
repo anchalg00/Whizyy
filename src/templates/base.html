@@ -1,0 +1,379 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<script src="https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+	<link href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="{% static 'include/rs-plugin/css/settings.css' %}" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{% static 'include/rs-plugin/css/layers.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'include/rs-plugin/css/navigation.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'include/rs-plugin/css/addons/revolution.addon.liquideffect.css' %}">
+	<link rel="stylesheet" href="{% static 'demos/recipes/css/fonts.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'demos/recipes/recipes.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<link href="../static/blogform/css/main.css" rel="stylesheet" media="all">
+	<style>
+		.dt-shadow{text-shadow:0px 10px 30px rgba(0,0,0,1)}#rev_slider_131_1 .uranus.tparrows{width:50px; height:50px; background:rgba(255,255,255,0)}#rev_slider_131_1 .uranus.tparrows:before{width:50px; height:50px; line-height:50px; font-size:40px; transition:all 0.3s;-webkit-transition:all 0.3s}#rev_slider_131_1 .uranus.tparrows:hover:before{opacity:0.75}.slotholder canvas { height: 100% !important; }
+	</style>
+	<title>Whizzy</title>
+</head>
+
+<body class="stretched">
+	<div id="wrapper" class="clearfix">
+		<header id="header" class="transparent-header static-sticky clearfix" >
+			<div id="header-wrap" >
+				<div class="container clearfix">
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+					<div id="logo" class="">
+						<a href="index.html" class="standard-logo"><img src="{% static 'homelogo.png' %}" alt="Canvas Logo" style="padding-top: 20px;padding-bottom: 20px;"></a>
+					</div> 
+
+					<form class="primary-menu-trigger" action="/action_page.php" style="margin-bottom: -62px">
+    						<div class="input-group" style="width:40%;margin-left:-30px">
+      							<input type="text" class="form-control" placeholder="Search" name="search" style="margin-top:38px;">
+      							<div class="input-group-btn">
+        							<button class="btn btn-default" style="background:white;margin-top:38px"type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      							</div>
+    						</div>
+  						</form>
+						
+					 
+
+					<nav id="primary-menu">
+						<ul>	
+						
+
+							<li class="current"><a href="{% url 'home' %}"><div><strong>Home</strong></div></a></li>
+							<li><a href="{% url 'blogs' 0%}"><div>Blogs <i class="icon-angle-down1 d-none d-lg-inline-block"></i></div></a>
+								<ul class="rounded-bottom">
+									<li><a href="{% url 'blogs' 0%}"><div>Trending Blogs</div></a></li>
+									 <div class="dropdown-divider my-0"></div>
+									<li><a href="{% url 'blogs' 1%}"><div>General</div></a></li>
+									<li><a href="{% url 'blogs' 2%}"><div>Food</div></a></li>
+									<li><a href="{% url 'blogs' 3%}"><div>Fashion</div></a></li>
+									<li><a href="{% url 'blogs' 4%}"><div>Travel</div></a></li>
+									<li><a href="{% url 'blogs' 5%}"><div>Technology</div></a></li>
+									<li><a href="{% url 'blogs' 6%}"><div>Music</div></a></li>
+									<li><a href="{% url 'blogs' 7%}"><div>Photography</div></a></li>
+									<li><a href="{% url 'blogs' 8%}"><div>Dance</div></a></li>
+									<li><a href="{% url 'blogs' 9%}"><div>Poetry</div></a></li>
+									<li><a href="{% url 'blogs' 10%}"><div>Literature</div></a></li>
+								</ul>
+							</li>
+							<li><a href="demos/recipes/recipes.html"><div>Innovations <i class="icon-angle-down1 d-none d-lg-inline-block"></i></div></a>
+								<ul class="rounded-bottom">
+									<li><a href="demos/recipes/recipe-single.html"><div>Books</div></a></li>
+									 <div class="dropdown-divider my-0"></div>
+									<li><a href="demos/recipes/recipes.html"><div>Songs</div></a></li>
+									<li><a href="demos/recipes/recipes.html"><div>Quotes</div></a></li>
+									<li><a href="demos/recipes/recipes.html"><div>Poems</div></a></li>
+									<li><a href="demos/recipes/recipes.html"><div>Short Stories</div></a></li>
+								</ul>
+							</li>
+						<!-- 	{% if print_username %}
+								<li><a href="#"> {{user.username}} </a> </li>
+							{% elif not print_username %}
+								<li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#exampleModalCenter2">SignUp</a></li>
+							
+							{% endif %}
+						</ul> -->
+						{% if request.user.is_authenticated %}
+							<li><a href="{% url 'userpage' request.user.username%}"><div>{{request.user.username}}<i class="icon-angle-down1 d-none d-lg-inline-block"></i></div></a>
+								<ul class="rounded-bottom">
+									<li><a href="{% url 'writeblogs' %}"><div>Write Blog</div></a></li>
+									<li><a href="{% url 'logout' %}"><div>Logout</div></a></li>
+								</ul>
+							</li>
+							{% else %}
+								<li><a href="{% url 'login' %}" >Login</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#exampleModalCenter2">SignUp</a></li>
+							
+							{% endif %}
+
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		{%block content %}
+
+
+		{%endblock%}
+
+		
+
+		<footer id="footer" class="bg-white noborder">
+			<div class="container">
+				<div class="footer-widgets-wrap clearfix">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-6">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 nott">Support</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#" class="text-black-50">Home</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">About</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">FAQs</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Support</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6 mt-4 mt-md-0">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 nott">Trending</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#" class="text-black-50">Shop</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Portfolio</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Blog</a></li>
+								</ul>
+
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-6 mt-4 mt-md-0">
+							<div class="widget clearfix">
+
+								<h4 class="ls0 nott">Features</h4>
+
+								<ul class="list-unstyled ml-0">
+									<li class="mb-2"><a href="#" class="text-black-50">Help Center</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Paid with Moblie</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Status</a></li>
+									<li class="mb-2"><a href="#" class="text-black-50">Contact Support</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+						<!-- <div class="col-lg-4 col-md-4">
+							<div id="instagram" class="widget clearfix">
+
+								<h4 class="ls0 nott">Instagram Photos</h4>
+								<div id="instagram-photos" class="instagram-photos masonry-thumbs grid-4" data-user="5834720953" data-count="8" data-type="user"></div>
+
+							</div>
+						</div> -->
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights" class="bg-light">
+
+				<div class="container">
+					<div class="row justify-content-between align-items-center">
+						<!-- <div class="col-sm-4 d-flex justify-content-sm-start mb-3 mb-sm-0 text-black-50">
+							Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.
+						</div> -->
+						<div class="col-sm-4 d-flex justify-content-sm-center mb-3 mb-sm-0">
+							<a href="http://facebook.com/semicolonweb" target="_blank" class="social-icon si-small si-colored si-facebook" title="Facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+							<a href="http://twitter.com/__semicolon" target="_blank" class="social-icon si-small si-colored si-twitter" title="Twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+							<a href="https://www.youtube.com/semicolonweb" target="_blank" class="social-icon si-small si-colored si-youtube" title="youtube">
+								<i class="icon-youtube"></i>
+								<i class="icon-youtube"></i>
+							</a>
+							<a href="https://www.instagram.com/semicolonweb" target="_blank" class="social-icon si-small si-colored si-instagram" title="instagram">
+								<i class="icon-instagram"></i>
+								<i class="icon-instagram"></i>
+							</a>
+						</div>
+						<div class="col-sm-4 d-flex justify-content-sm-end">
+							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+						</div>
+					</div>
+				</div>
+
+			</div><!-- #copyrights end -->
+		</footer>
+	<!-- 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true		">
+					      <div class="modal-dialog modal-dialog-centered" role="document">
+					        <div class="modal-content">
+					          <div class="modal-header">
+					            <h3 class="modal-title" id="exampleModalLongTitle">Login Here</h3>
+					            
+					            <form method="post">
+					              {% csrf_token %}
+					              <div style=" background-color:black; width: 100%; margin: 0 auto;">
+					                <div style="width: 100%; margin: 0 auto; padding: 20px; color: white;">
+											{{login_form|crispy}}
+					                  <button type="submit" class="btn btn-primary" style="background-color:white;color:black; ">Login</button>
+					                </div>
+					              </div>
+					            </form>
+					          </div>
+					          <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">Create an account</button>
+					          </div>
+					        </div>
+					      </div>
+		</div>
+	
+	 	<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="	true">
+					      <div class="modal-dialog modal-dialog-centered" role="document">
+					        <div class="modal-content">
+					          <div class="modal-header">
+					            <h3 class="modal-title" id="exampleModalLongTitle">SignUp Here</h3>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					              <span aria-hidden="true">&times;</span>
+					            </button>
+					          </div>
+					          <div class="modal-body">
+					            <form method="post">
+					            	{% csrf_token %}
+					              <div style=" background-color: black; width: 100%; margin: 0 auto;">
+					                <div style="width: 100%; margin: 0 auto; padding: 20px; color: white;">
+					                	{{registration_form|crispy}}
+					                  <button type="submit" class="btn btn-primary" style="background-color:white;color:black; ">SignUp</button>
+					                </div>
+					              </div>
+					            </form>
+					          </div>
+					          <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">Already have an account</button>
+					          </div>
+					        </div>
+					      </div>
+		</div>-->
+	</div>
+	<div id="gotoTop" class="icon-angle-up"></div>
+	<script src="../static/blogform/vendor/jquery/jquery.min.js"></script>
+	<script src="../static/blogform/js/global.js"></script>
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/pixi.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/addons/revolution.addon.liquideffect.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.actions.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.migration.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+	<script src="{% static 'include/rs-plugin/js/extensions/revolution.extension.video.min.js' %}"></script>
+	<script src="{% static 'js/functions.js' %}"></script>
+	<script>
+		var revapi2,
+		tpj;
+		(function() {
+			if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();
+
+			function onLoad() {
+				if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
+					if(tpj("#rev_slider_2_1").revolution == undefined){
+						revslider_showDoubleJqueryError("#rev_slider_2_1");
+					}else{
+						revapi2 = tpj("#rev_slider_2_1").show().revolution({
+							sliderType:"standard",
+							jsFileLocation:"include/rs-plugin/js/",
+							sliderLayout:"fullscreen",
+							dottedOverlay:"none",
+							delay:9000,
+							parallax: {
+								type:"scroll",
+								origo:"slidercenter",
+								speed:400,
+							  speedbg:0,
+							  speedls:0,
+								levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+							},
+							navigation: {
+								keyboardNavigation:"off",
+								keyboard_direction: "horizontal",
+								mouseScrollNavigation:"off",
+								 mouseScrollReverse:"default",
+								onHoverStop:"off",
+								arrows: {
+									style:"uranus",
+									enable:true,
+									hide_onmobile:false,
+									hide_onleave:false,
+									tmp:'',
+									left: {
+										h_align:"right",
+										v_align:"bottom",
+										h_offset:80,
+										v_offset:30
+									},
+									right: {
+										h_align:"right",
+										v_align:"bottom",
+										h_offset:20,
+										v_offset:30
+									}
+								}
+							},
+							responsiveLevels:[1240,1024,778,480],
+							visibilityLevels:[1240,1024,778,480],
+							gridwidth:[1240,1024,778,480],
+							gridheight:[868,768,960,720],
+							lazyType:"all",
+							shadow:0,
+							spinner:"off",
+							stopLoop:"off",
+							stopAfterLoops:-1,
+							stopAtSlide:-1,
+							shuffle:"off",
+							autoHeight:"off",
+							fullScreenAutoWidth:"off",
+							fullScreenAlignForce:"off",
+							fullScreenOffsetContainer: "70",
+							fullScreenOffset: "",
+							disableProgressBar:"off",
+							hideThumbsOnMobile:"off",
+							hideSliderAtLimit:0,
+							hideCaptionAtLimit:0,
+							hideAllCaptionAtLilmit:0,
+							debugMode:false,
+							fallbacks: {
+								simplifyAll:"off",
+								nextSlideOnWindowFocus:"off",
+								disableFocusListener:false,
+							}
+						});
+					}; /* END OF revapi call */
+
+					RsLiquideffectAddOn(tpj, revapi2);
+
+					if(typeof ExplodingLayersAddOn !== "undefined") ExplodingLayersAddOn(tpj, revapi2);
+				}; /* END OF ON LOAD FUNCTION */
+			}()); /* END OF WRAPPING FUNCTION */
+		</script>
+</body>
+</html>

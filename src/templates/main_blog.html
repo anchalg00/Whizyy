@@ -1,0 +1,215 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+	<section id="page-title" class="page-title-parallax page-title-dark" style="margin-bottom: -288px" >
+			<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 1%}"><img src='../static/category/general.png' style="min-height:480px; max-height:480px"alt="Image 1"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger" style="width: fit-content;">General</span>
+								<div class="text-overlay-title">
+									<h2>CJI defends collegium system, says don't defame judiciary</h2>
+								</div>
+								<!-- <div class="text-overlay-meta">
+									<span>14th Sep 2014</span>
+								</div> -->
+								<a href="#" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="75" data-width="7" data-animate="3000">7.5</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 2%}"><img src="../static/category/art.png" style="min-height:480px; max-height:480px"alt="Image 2"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger" style="width: fit-content;">Art</span>
+								<div class="text-overlay-title">
+									<h2>Nutrition pursue these aspirations network respect focus.</h2>
+								</div>
+								
+								<a href="#" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="50" data-width="7" data-animate="3000">5.0</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 3%}"><img src="../static/category/fashion.png" style="min-height:480px; max-height:480px"alt="Image 3"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Fashion & Beauty</span>
+								<div class="text-overlay-title">
+									<h2>Political, vulnerable citizens eradicate philanthropy.</h2>
+								</div>
+								
+								<a href="#" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="60" data-width="7" data-animate="3000">6.0</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 4%}"><img src="../static/category/food.png" style="min-height:480px; max-height:480px"alt="Image 4"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Food</span>
+								<div class="text-overlay-title">
+									<h2>Revitalize Bloomberg accelerate human potential.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 4%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="80" data-width="7" data-animate="3000">8.0</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 5%}"><img src="../static/category/literature.png" style="min-height:480px; max-height:480px"alt="Image 5"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Literature & Poetry</span>
+								<div class="text-overlay-title">
+									<h2>Momentum tackling cross-agency coordination volunteer revitalize.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 5%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="40" data-width="7" data-animate="3000">4.0</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 6%}"><img src="../static/category/music.png" style="min-height:480px; max-height:480px"alt="Image 6"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Music & Dance</span>
+								<div class="text-overlay-title">
+									<h2>Social responsibility Aga Khan health institutions.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 6%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="62" data-width="7" data-animate="3000">6.2</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 0%}"><img src="../static/category/photography.png" style="min-height:480px; max-height:480px"alt="Image 6"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Photography</span>
+								<div class="text-overlay-title">
+									<h2>Social responsibility Aga Khan health institutions.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 0%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="62" data-width="7" data-animate="3000">6.2</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 7%}"><img src="../static/category/technology.png" style="min-height:480px; max-height:480px"alt="Image 6"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Technology</span>
+								<div class="text-overlay-title">
+									<h2>Social responsibility Aga Khan health institutions.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 7%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="62" data-width="7" data-animate="3000">6.2</div>
+						</div>
+					</div>
+
+					<div class="oc-item">
+						<a href="{% url 'blogs' 8%}"><img src="../static/category/travel.png" style="min-height:480px; max-height:480px"alt="Image 6"></a>
+						<div class="overlay">
+							<div class="text-overlay">
+								<span class="badge badge-danger"style="width: fit-content;">Travel</span>
+								<div class="text-overlay-title">
+									<h2>Social responsibility Aga Khan health institutions.</h2>
+								</div>
+								
+								<a href="{% url 'blogs' 8%}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm">View Blog<i class="icon-angle-right"></i></a>
+							</div>
+							<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="62" data-width="7" data-animate="3000">6.2</div>
+						</div>
+					</div>
+
+				</div>
+	</section>
+
+	<section id="content" style="overflow: inherit;">
+			<div class="content-wrap p-0">
+				<div class="recipe-itmes bg-light">
+					<div class="row no-gutters clearfix">
+						<div class="col-lg-3 py-5 px-4 position-sticky h-100" style="top: 80px">
+
+							<div class="row border-0">
+								<div class="col-lg-12 col-md-4 col-12 mt-5 mt-md-0 widget border-0 widget_links clearfix">
+									<h2 class="nott ls0">Blog Categories</h2>
+									<br>
+									<ul>
+										{%for instance in category_list%}
+										<li><h2><a href="#"><strong>{{instance}}</strong></a></h2></li>
+										{% endfor %}
+																				
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-9 border-right-0 bg-white">
+							<div class="row no-gutters">
+								{% for item in all_blog %}
+									<div class="card">
+										<div class="card-body">
+											
+											<h3><strong><a href="{% url 'single_blog' item.slug %}">{{item.title}}</a></strong></h3>
+
+											{% if item.image %}
+											<img src="{{item.image.url}}" style="max-width: 500px">
+											{% endif %}
+											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+											
+												<p class="card-author">By <a href="{% url 'userpage' item.author.username %}">{{item.author.username}}</a></p>
+												
+												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.6</span>
+											</div>
+											<h3 class="card-title">{{item.body|safe}}</h3>
+											<h5 class="card-date"><i class="icon-line2-calendar"></i>Dec 26, 2019</h5>
+
+											<br><br>
+											<a class="tp-caption rev-btn button button-large m-0 button-white t700 button-circle button-light"
+												href="{% url 'single_blog' item.slug %}" target="_blank"
+												id="slide-7-layer-13"
+												 data-x="['left','left','middle','middle']" data-hoffset="['0','30','0','0']"
+												 data-y="['top','top','top','top']" data-voffset="['570','530','350','555']"
+												data-height="none"
+												data-type="button"
+												data-actions=''
+												data-responsive_offset="off"
+												data-responsive="off"
+												data-frames='[{"delay":3000,"speed":1600,"frame":"0","from":"x:50px;z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;fbr:100;","bgcolor":"#FFF","to":"o:1;fbr:100;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","bgcolor":"#FFF","to":"opacity:0;fbr:100;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"150","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;fbr:90%;","style":"c:#000;"}]'
+												style="z-index: 9; background-color:black; color:white"><span>View Blog</span> <i class="icon-angle-right"></i>
+											</a>
+										</div>
+									</div>
+									{% endfor %}
+								<div class="col-12 d-flex justify-content-end p-4">
+									<a href="#" class="button button-circle m-0 tright"><span>Next</span><i class="icon-angle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+	</section>
+
+{%endblock%}

@@ -1,0 +1,121 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content%}
+		<section id="page-title" class="page-title-parallax page-title-dark" style="background:url(../static/user-background.png); padding: 25px 0;" data-0="background-position:0px -200px;" data-400="background-position:0px -100px;">
+			<div class="container clearfix"style="background:url(../static/user-background.png);"">
+			<div class="row" style="text-align: center;" >
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="card" style="width: 100%;">
+				  <div class="card-body">
+				    <h4 class="card-title">{{profile_user.username}}</h4>
+				    <div class="row" style="text-align: center;" >
+					<div class="col-md-12">
+						 <img  class="img-circle" src="{% static 'demos/recipes/images/profilepic.jpeg' %}" />
+
+					</div>
+					</div>
+				    <br>
+					<div class="row" style="text-align: center;" >
+					<div class="col-md-12">
+						{% if request.user != profile_user%}
+						{% if is_follower%}
+						 <a href="{% url 'unfollow' profile_user.username%}"><button type="button" style="width: 50%; background-color: grey;color: white;"class="btn btn-light">Following</button></a>
+						{% else %}
+						<a href="{% url 'follow' profile_user.username%}"><button type="button" style="width: 50%; background-color: black;color: white;"class="btn btn-light">Follow</button></a>
+						{% endif %}
+						{% else%}
+						 <h4 style="color: black; display: inline;">Followers:</h4>
+
+						{% endif %}
+						 <div class="card" style="display: inline;">
+						 	
+						 <h4 style="color: black; display: inline;">{{followers_count}}</h4>
+
+
+						 </div>
+
+					</div>
+
+					</div>
+
+					
+				  
+				</div>
+				<div class="col-md-4"></div>
+				</div>
+				</div>
+
+
+				
+				
+			</div>
+			<div class="row" style="text-align: center;" >
+					<div class="col-md-12" style="color:white;">
+						<a style="color: white; text-decoration: none;" href="#"> Your Blogs</a>|
+						  <a style="color: white; text-decoration: none;" href="#"> Liked Blogs</a>|
+						   <a style="color: white; text-decoration: none;" href="#"> Following</a>
+
+					</div>
+
+				</div>
+		</section><!-- #page-title end -->
+
+
+		<section id="content" style="overflow: inherit;">
+			<div class="content-wrap p-0">
+				<div class="recipe-itmes bg-light">
+					<div class="row no-gutters clearfix">
+						<div class="col-md-12 border-right-0 bg-white">
+							<div class="row no-gutters">
+								{% for item in blog_list1 %}
+									<div class="card">
+										<div class="card-body">
+											
+											<h3><strong><a href="{% url 'single_blog' item.slug %}">{{item.title}}</a></strong></h3>
+
+											{% if item.image %}
+											<img src="{{item.image.url}}" style="max-width: 500px">
+											{% endif %}
+											<div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+											
+												<p class="card-author">By <a href="{% url 'userpage' item.author.username %}">{{item.author.username}}</a></p>
+												
+												<span class="badge badge-primary bgcolor"><i class="icon-star3"></i> 4.6</span>
+											</div>
+											<h3 class="card-title">{{item.body|safe}}</h3>
+											<h5 class="card-date"><i class="icon-line2-calendar"></i>Dec 26, 2019</h5>
+
+											<br><br>
+											<a class="tp-caption rev-btn button button-large m-0 button-white t700 button-circle button-light"
+												href="{% url 'single_blog' item.slug %}" target="_blank"
+												id="slide-7-layer-13"
+												 data-x="['left','left','middle','middle']" data-hoffset="['0','30','0','0']"
+												 data-y="['top','top','top','top']" data-voffset="['570','530','350','555']"
+												data-height="none"
+												data-type="button"
+												data-actions=''
+												data-responsive_offset="off"
+												data-responsive="off"
+												data-frames='[{"delay":3000,"speed":1600,"frame":"0","from":"x:50px;z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;fbr:100;","bgcolor":"#FFF","to":"o:1;fbr:100;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","bgcolor":"#FFF","to":"opacity:0;fbr:100;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"150","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;fbr:90%;","style":"c:#000;"}]'
+												style="z-index: 9; background-color:black; color:white"><span>View Blog</span> <i class="icon-angle-right"></i>
+											</a>
+										</div>
+										<hr>
+									</div>
+									{% endfor %}
+
+								<div class="col-12 d-flex justify-content-end p-4">
+									<a href="#" class="button button-circle m-0 tright"><span>Next</span><i class="icon-angle-right"></i></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+	</section>
+
+{%endblock%}
+
+		

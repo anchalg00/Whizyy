@@ -1,0 +1,151 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+    <section  style="background:url(../static/writeblog.png); padding-top:80px;margin-top:-42px;" data-0="background-position:0px 20px;" data-400="background-position:0px -100px;">
+        <div class="page-wrapper  p-b-50"style="margin-left:-15%" >
+                <div class="page-wrapper p-b-50" >
+                <div class="wrapper wrapper--w900">
+                    <div class="card card-6" style="border: none">
+                        <div class="card-heading">
+                            <h2 class="title">Create</h2>
+                        </div>
+                        <div class="card-body" style="min-width:1150px">
+                            <form method="POST" enctype="multipart/form-data">
+                             {% csrf_token %}
+                             {{form.media}}
+                             <!-- {% load crispy_forms_tags %}
+                                {{form|crispy}} -->
+                                <div class="form-row">
+                                    <div class="name">Title</div>
+                                    <div class="value">
+                                        <!-- <input class="input--style-6" type="text" name="full_name"> -->
+                                {{form.title}}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Category</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                            <!-- <input class="input--style-6" type="email" name="email" placeholder="example@email.com"> -->
+                                            {{form.category.errors}}
+                                            {{form.category}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Body</div>
+                                    <div class="value">
+                                        <div class="input-group">
+                                         <!--    <textarea ols="80" id="editor1" name="editor1" rows="10" data-sample-short></textarea> -->
+                                            {{form.body}}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="name">Upload Image</div>
+                                    <div class="value">
+                                        <div class="input-group js-input-file">
+                                            <!--  <input class="input-file" type="hidden" name="file_cv" id="file"> -->
+                                            <!--  <label class="label--file" for="file">Choose file</label>
+                                            <span class="input-file__info">No file chosen</span> -->
+                                            {{form.image}}
+                                        </div>
+                                        <div class="label--desc">Upload any relevant file. Max file size 50 MB</div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn btn--radius-2 btn--blue-2" type="submit" style="line-height: 50px;padding: 0 30px;font-size: 15px;font-weight: 700;color: #fff;">Upload Blog</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+            
+    </section>
+
+    <script>
+        // Don't forget to add CSS for your custom styles.
+        CKEDITOR.addCss('figure[class*=easyimage-gradient]::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }' +
+          'figure[class*=easyimage-gradient] figcaption { position: relative; z-index: 2; }' +
+          '.easyimage-gradient-1::before { background-image: linear-gradient( 135deg, rgba( 115, 110, 254, 0 ) 0%, rgba( 66, 174, 234, .72 ) 100% ); }' +
+          '.easyimage-gradient-2::before { background-image: linear-gradient( 135deg, rgba( 115, 110, 254, 0 ) 0%, rgba( 228, 66, 234, .72 ) 100% ); }');
+
+        CKEDITOR.replace('editor1', {
+          extraPlugins: 'easyimage',
+          removePlugins: 'image',
+          removeDialogTabs: 'link:advanced',
+          toolbar: [{
+              name: 'document',
+              items: ['Undo', 'Redo']
+            },
+            {
+              name: 'styles',
+              items: ['Format']
+            },
+            {
+              name: 'basicstyles',
+              items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']
+            },
+            {
+              name: 'paragraph',
+              items: ['NumberedList', 'BulletedList']
+            },
+            {
+              name: 'links',
+              items: ['Link', 'Unlink']
+            },
+            {
+              name: 'insert',
+              items: ['EasyImageUpload']
+            }
+          ],
+          height: 630,
+          cloudServices_uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
+          // Note: this is a token endpoint to be used for CKEditor 4 samples only. Images uploaded using this token may be deleted automatically at any moment.
+          // To create your own token URL please visit https://ckeditor.com/ckeditor-cloud-services/.
+          cloudServices_tokenUrl: 'https://33333.cke-cs.com/token/dev/ijrDsqFix838Gh3wGO3F77FSW94BwcLXprJ4APSp3XQ26xsUHTi0jcb1hoBt',
+          easyimage_styles: {
+            gradient1: {
+              group: 'easyimage-gradients',
+              attributes: {
+                'class': 'easyimage-gradient-1'
+              },
+              label: 'Blue Gradient',
+              icon: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/gradient1.png',
+              iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/hidpi/gradient1.png'
+            },
+            gradient2: {
+              group: 'easyimage-gradients',
+              attributes: {
+                'class': 'easyimage-gradient-2'
+              },
+              label: 'Pink Gradient',
+              icon: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/gradient2.png',
+              iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/hidpi/gradient2.png'
+            },
+            noGradient: {
+              group: 'easyimage-gradients',
+              attributes: {
+                'class': 'easyimage-no-gradient'
+              },
+              label: 'No Gradient',
+              icon: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/nogradient.png',
+              iconHiDpi: 'https://ckeditor.com/docs/ckeditor4/4.14.0/examples/assets/easyimage/icons/hidpi/nogradient.png'
+            }
+          },
+          easyimage_toolbar: [
+            'EasyImageFull',
+            'EasyImageSide',
+            'EasyImageGradient1',
+            'EasyImageGradient2',
+            'EasyImageNoGradient',
+            'EasyImageAlt'
+          ]
+        });
+    </script>
+{%endblock%}

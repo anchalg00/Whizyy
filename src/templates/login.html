@@ -1,0 +1,69 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+		<section id="content" style="background-color: black; padding:10px;">
+
+			<div class="content-wrap">
+
+				
+
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+							
+
+						<ul class="tab-nav tab-nav2 center clearfix">
+							<li class="inline-block"><a href="#tab-login">Login</a></li>
+							<li class="inline-block"><a href="#tab-register">Register</a></li>
+						</ul>
+
+						<div class="tab-container">
+
+							<div class="tab-content clearfix" id="tab-login">
+								<div class="card nobottommargin">
+									<div class="card-body" style="padding: 40px;">
+										<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+											{% csrf_token %}
+											<h3>Login to your Account</h3>
+											{{login_form|crispy}}
+											<div class="col_full nobottommargin">
+												<button type="submit" class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+												<a href="#" class="fright">Forgot Password?</a>
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-content clearfix" id="tab-register">
+								<div class="card nobottommargin">
+									<div class="card-body" style="padding: 40px;">
+										<h3>Register for an Account</h3>
+
+										<form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">
+												{% csrf_token %}
+												{{register_form|crispy}}
+
+											<div class="col_full nobottommargin">
+												<button type="submit"class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+{%endblock%}
